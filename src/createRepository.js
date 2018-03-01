@@ -124,6 +124,7 @@ export default function createRepository(snapshot) {
 
             const treeHash = treeStore.write(cloneDeep(tree), lastTreeHash);
             const commitHash = commitStore.write({
+                branch: repository.branch,
                 author,
                 date: (new Date()).toISOString(),
                 message,
